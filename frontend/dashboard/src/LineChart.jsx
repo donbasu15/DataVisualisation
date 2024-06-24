@@ -12,18 +12,12 @@ let yearOptions = [];
 const innerHeight = height - margin.top - margin.bottom;
 const innerWidth = width - margin.left - margin.right;
 
-
-
-
-
-
 const LineChart = ({data})=>{  
     const [y,setY] = useState('start_year');
     let ob={};
     yearOptions = [];
     
     dataSet(data,ob,y);
-
 
     const yScale = scaleLinear()
         .domain([min(Object.values(ob)),max(Object.values(ob))])
@@ -33,6 +27,7 @@ const LineChart = ({data})=>{
         .domain(extent(Object.keys(ob)))
         .range([0,innerWidth])
         .nice()
+
     const changeY = (event)=>{
        setY(event.value)
     }
@@ -45,9 +40,9 @@ const LineChart = ({data})=>{
             <g>
              <YTicks margin={margin} innerWidth={innerWidth} yScale={yScale}/>
              <XTicks margin={margin} xScale={xScale} innerHeight={innerHeight} />
-              <text transform={`translate(${innerWidth/2+89},${innerHeight+170})`} >Year</text>
-              <text transform={`rotate(-90) translate(${-innerHeight+50},50)`} >Objects</text>
-              <text transform={`translate(${innerWidth/2+99},${innerHeight+200})`} style={{fontSize:'large', textAnchor:'middle'}}>Objects in a Year</text>
+             <text transform={`translate(${innerWidth/2+89},${innerHeight+170})`} >Year</text>
+             <text transform={`rotate(-90) translate(${-innerHeight+50},50)`} >Objects</text>
+             <text transform={`translate(${innerWidth/2+99},${innerHeight+200})`} style={{fontSize:'large', textAnchor:'middle'}}>Objects in a Year</text>
              <g transform={`translate(${margin.left},${margin.top})`}>
                  <path fill="none"
                      stroke="black"
