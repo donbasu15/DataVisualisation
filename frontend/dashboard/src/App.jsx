@@ -6,8 +6,8 @@ import { useState,useEffect } from 'react'
 import { json } from 'd3'
 import { dataSet } from './Components/LineChart/LineChartData.js'
 import './App.css'
-const url ='http://localhost:8000/getdata'
-const App = ()=>{
+const url ='http://localhost:8000/getadmindata'
+const AdminApp = ()=>{
     const [data,setData] =useState(null);
     const [barOptions,setBarOptions] = useState([]);
     let o={}
@@ -41,4 +41,4 @@ const App = ()=>{
        </>
     )
 }
-export default App;
+export default AdminApp;
