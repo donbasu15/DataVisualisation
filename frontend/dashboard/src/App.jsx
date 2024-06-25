@@ -25,7 +25,7 @@ const AdminApp = ()=>{
     },[])
     if(!data){
         return(
-           <>Loading...</>
+           <></>
         )
     }
    

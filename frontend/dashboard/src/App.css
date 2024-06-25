@@ -5,7 +5,7 @@ circle{
 .scaterPlot{
   background-color: #e5e2e0;
   border-radius: 30px;
-  border:2px solid rgb(140, 140, 140);
+  box-shadow: 1px 1px 10px  #333;
   height: 450px;
   width: 500px;
 }
@@ -22,14 +22,14 @@ text{
 .barchart{
   background-color: #e5e2e0;
   border-radius: 30px;
-  border:2px solid rgb(140, 140, 140);
+  box-shadow: 1px 1px 10px  #333 ;
   height: 450px;
   width: 500px;
 }
 .linechart{
   background-color: #e5e2e0;
   border-radius: 30px;
-  border:2px solid rgb(140, 140, 140);
+  box-shadow: 1px 1px 10px  #333 ;
   height: 500px;
   width: 1000px;
 }
@@ -152,4 +152,31 @@ text{
 .dropdown-label{
   font-size: 1em;
   margin-left: 25px;
+}
+
+.loginPage{
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.loginForm{
+  box-shadow:1px 1px 4px  #333 ;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.loginPage form input{
+  border: #f2f9fc;
+  box-shadow: 0.51px 0.51px 4px  #333 ;
+  height: 20px;
+  background-color: #e0e4e6;
+}
+.loginPage form button{
+  border: #f2f9fc;
+  box-shadow: 0.51px 0.51px 4px  #333 ;
+  height: 20px;
+  background-color: rgba(105, 107, 108, 0.932);
 }

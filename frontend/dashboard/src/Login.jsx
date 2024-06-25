@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
+import './App.css'
 const Login = () =>{
     let [username,setUsername] = useState('admin');
     let [password,setPassword] = useState('admin123');
+    let [message,setMessage] = useState(false);
     let navigate = useNavigate();
 
     const changeUser = (event)=>{
@@ -22,19 +24,25 @@ const Login = () =>{
         );
         if(response.data.url){
             navigate(response.data.url)
+        }else{
+            setMessage(true);
         }
       
   
     }
     return(
-        <>
-           <form onSubmit={handleSubmit}>
+     <>
+        <div className="loginPage">
+           {message ? <b>Invalid Credential</b> : ''}
+           <form onSubmit={handleSubmit} className="loginForm">
                 <input name="username" type="text" value={username} onChange={changeUser}/>
-                <input name="password" type="password" value={password} onChange={changePass}/>
-                <button>Login</button>
+               <br /> <br /> <input name="password" type="password" value={password} onChange={changePass}/>
+              <br /> <br /> <button>Login</button>
                 
             </form> 
-        </>
+        </div>
+        
+     </>
     )
 }
 
